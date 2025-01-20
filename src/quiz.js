@@ -13,7 +13,7 @@ class Quiz {
     // 2. getQuestion()
 
     getQuestion(){
-        return this.currentQuestionIndex;
+        return this.questions[this.currentQuestionIndex];
     }
     
     // 3. moveToNextQuestion()
@@ -23,16 +23,21 @@ class Quiz {
     // 4. shuffleQuestions()
 
     shuffleQuestions(){
-
+        for (let i = this.questions.length - 1; i > 0; i--) {
+            const randomIndex = Math.floor(Math.random() * (i + 1));
+            [this.questions[i], this.questions[randomIndex]] = [this.questions[randomIndex], this.questions[i]];
+        }
+        return this.questions;
     }
+    
 
     // 5. checkAnswer(answer)
 
     checkAnswer(answer){
+        if (this.questions[this.currentQuestionIndex].answer === answer){
+            this.correctAnswers++
+        }
         
-        //if(answer === this.correctAnswers){
-          //  this.correctAnswers++;
-        //}   
     }
 
     // 6. hasEnded()
