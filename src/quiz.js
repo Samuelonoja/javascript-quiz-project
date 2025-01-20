@@ -50,5 +50,20 @@ class Quiz {
             return true;
         }
     }
+
+    // 7. filterQuestionsByDifficulty(difficulty)
+    filterQuestionsByDifficulty(difficulty){
+        if (typeof difficulty === "number" && difficulty >= 1 && difficulty <= 3) {
+            this.questions = this.questions.filter((question) => question.difficulty === difficulty);
+        }
+    }
+    // 8. averageDifficulty()
+    averageDifficulty() {
+        if (this.questions.length === 0){ 
+            return 0
+        }
+        const totalDifficulty = this.questions.reduce((sum, question) => sum + question.difficulty, 0);
+        return totalDifficulty / this.questions.length;
+    }
     }
 
