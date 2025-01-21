@@ -62,8 +62,8 @@ class Quiz {
         if (this.questions.length === 0){ 
             return 0
         }
-        const totalDifficulty = this.questions.reduce((sum, question) => sum + question.difficulty, 0);
-        return totalDifficulty / this.questions.length;
+        const totalDifficulty = this.questions.reduce((sum, question) => sum + question.difficulty, 0)
+        return totalDifficulty / this.questions.length
     }
     }
 
