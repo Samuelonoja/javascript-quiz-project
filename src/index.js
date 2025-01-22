@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Display the time remaining in the time remaining container
   const timeRemainingContainer = document.getElementById("timeRemaining");
   timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+  
 
   // Show first question
   showQuestion();
@@ -161,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
      // 2. Update the green progress bar
     // Update the green progress bar (div#progressBar) width so that it shows the percentage of questions answered
     const progress = Math.floor(((quiz.currentQuestionIndex + 1) / quiz.questions.length) * 100);
+    //progressBar.style.color = "black"
     progressBar.style.width = `${progress}%`; // Just set the width to the calculated value
     // 3. Update the question count text 
     // Update the question count (div#questionCount) show the current question out of total questions
